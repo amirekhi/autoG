@@ -31,8 +31,8 @@ const Categories = () => {
     var settings = {
         infinite: true,
         speed: 900,
-        slidesToScroll: 5,
-        slidesToShow: 5,
+        slidesToScroll: 4,
+        slidesToShow: 4,
         autoplay: true, // Enable auto-scrolling
         autoplaySpeed: 3000, // Time in milliseconds between each scroll (3 seconds in this case)
         arrows: false,

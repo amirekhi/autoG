@@ -20,7 +20,7 @@ const Context = () => {
         process.
       </p>
      <div className='flex justify-start items-center gap-4' >
-          <Link href={'./Cars'  } className=' block translate-y-10' > <button className='rounded-full mt-4 hover:scale-125 transition duration-300 ease-in-out bg-blue-600 text-white font-bold h-[60px] w-[120px]'  > Cars</button></Link>
+          <Link href={'./Cars'  } className=' block translate-y-10' > <button className='rounded-full mt-4 text- border-red-400 border-2 hover:scale-105 transition duration-300 ease-in-out bg-blue-600 text-white font-bold h-[60px] w-[120px]'  > Cars</button></Link>
           <InstagramButton/>
      </div>
     </div>

@@ -5,7 +5,7 @@ const InstagramButton = () => {
   return (
     <Link href={'https://www.instagram.com/nemati_motors?igsh=MXV3ZDRtZnR2eTdmNg=='} className="block translate-y-10">
       <button
-        className="rounded-full mt-4 hover:scale-125 transition duration-300 ease-in-out text-white font-bold h-[60px] w-[120px] flex items-center justify-center"
+        className="border-2 border-blue-400 rounded-full mt-4 hover:scale-105 transition duration-300 ease-in-out text-white font-bold h-[60px] w-[120px] flex items-center justify-center"
         style={{
           background: 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)',
         }}

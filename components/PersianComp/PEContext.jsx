@@ -20,7 +20,7 @@ const PEContext = () => {
       </p>
 
       <div className='flex justify-start flex-row-reverse items-center gap-4' >
-          <Link href={'./Pe/Cars'  } className=' block translate-y-10' > <button className='rounded-full mt-4 hover:scale-125 transition duration-300 ease-in-out bg-blue-600 text-white font-bold h-[60px] w-[120px]'  > ماشین ها</button></Link>
+          <Link href={'./Pe/Cars'  } className=' block translate-y-10' > <button className='rounded-full mt-4 border-2 border-red-400 hover:scale-105 transition duration-300 ease-in-out bg-blue-600 text-white font-bold h-[60px] w-[120px]'  > ماشین ها</button></Link>
           <InstagramButton/>
      </div>
     </div>

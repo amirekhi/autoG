@@ -83,7 +83,7 @@ const Navbar = () => {
       ) : (
         <div className='flex gap-4 w-[33%] py-4 justify-center items-center h-full max-sm:flex-col'>
           <button
-            className='w-[140px] h-[50px] rounded-full hover:scale-110 max-md:text-sm transition duration-200 bg-blue-500 text-white p-2 max-md:w-[115px]'
+            className='w-[140px] h-[50px] border-2 border-red-400   rounded-full hover:scale-110 max-md:text-sm transition duration-200 bg-blue-500 text-white p-2 max-md:w-[115px]'
             onClick={() => { redirect('/login') }}
           >
             LogIn / SignUp

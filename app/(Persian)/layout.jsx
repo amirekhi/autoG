@@ -11,11 +11,11 @@ export default async function RootLayout({ children }) {
 
   
   return (
-   <>
+   <div className="font-persian">
         <PENavbar  />
         {children}
         <FloatingButton/>
         <PEFooter/>
-    </>
+    </div>
   );
 }

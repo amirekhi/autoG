@@ -80,9 +80,9 @@ const Categories = () => {
                 <div className='w-full  '>
                     <Slider {...settings}>
                     {Categories?.map((Categorie , index) => (
-                            <div className=' pb-12c relative' key={index}>
-                            <div className='w-[260px] h-[350px] p-4 flex justify-center items-end  bg-black shadow-blue-900 group shadow-md overflow-hidden  relative mx-auto'>
-                                <Image src={Categorie.CategorieImage || '/bgimg.jpg'}  className='w-full h-full object-cover transition duration-[3s] group-hover:scale-125 group-hover:opacity-30  ' fill sizes='100%' alt='brands logo'/>
+                            <div className=' pb-12 relative' key={index}>
+                            <div className='w-[260px] h-[350px] p-4 flex justify-center items-end  bg-black shadow-blue-900 group shadow-md overflow-hidden  relative mx-auto rounded-xl'>
+                                <Image src={Categorie.CategorieImage || '/bgimg.jpg'}  className='w-full h-full object-cover transition duration-[3s] group-hover:scale-125 group-hover:opacity-30   ' fill sizes='100%' alt='brands logo'/>
                                 <p className='text-white font-semibold z-30 w-full text-left ' >{Categorie.Describtion}</p>
                             </div>
                         </div>

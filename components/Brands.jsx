@@ -57,7 +57,7 @@ const Brands = () => {
         ]
       };
   return (
-    <div className="w-full max-md:rounded-xl max-md:w-[95%] mx-auto h-[40vh] flex justify-center my-16 mb-32 items-center flex-col bg-blue-500 ">
+    <div className="w-full  mx-auto h-[40vh] flex justify-center  items-center flex-col bg-blue-500 ">
        
       <div className='w-[70vw]  py-4'>
     <Slider {...settings}>

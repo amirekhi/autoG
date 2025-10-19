@@ -10,6 +10,7 @@ import PEWhyus from '@/components/persianLanding.jsx/PEWhyus'
 import PEFeedbacks from '@/components/persianLanding.jsx/PEFeedbacks'
 import PEPrises from '@/components/PersianComp/PEPrises'
 import PECategories from '@/components/PersianComp/PECategories'
+import CardCarousel from '@/components/CardCarousel'
 
 
 const Home = () => {
@@ -18,14 +19,14 @@ const Home = () => {
   return (
     <>
       <PEHero/>
-      <PEHSlider/>
+      <CardCarousel/>
       <PECategories/>
-      <PEHowItsDone/>
+      {/* <PEHowItsDone/> */}
       <PEAbout/>
       <PEPrises/>
       <PEWhyus/> 
       <PEBrands/>
-      <PEFeedbacks/>
+     
     </>
     
   )

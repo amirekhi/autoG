@@ -1,3 +1,5 @@
+import { FaPhone, FaWhatsapp, FaTelegram, FaInstagram, FaEnvelope } from 'react-icons/fa';
+
 export const navLinks = [
     {
       path: "/",
@@ -21,6 +23,39 @@ export const navLinks = [
     },
   ];
 
+  
+export  const contactItems = [
+  {
+    label: 'Personal Number',
+    value: '09336565309',
+    icon: FaPhone,
+    href: 'tel:09336565309',
+  },
+  {
+    label: 'WhatsApp',
+    value: '09336565309',
+    icon: FaWhatsapp,
+    href: 'https://wa.me/989336565309', // add country code
+  },
+  {
+    label: 'Telegram',
+    value: '@amir44333',
+    icon: FaTelegram,
+    href: 'https://t.me/amir44333',
+  },
+  {
+    label: 'Instagram',
+    value: 'amir_ekhi_',
+    icon: FaInstagram,
+    href: 'https://instagram.com/amir_ekhi_',
+  },
+  {
+    label: 'Email',
+    value: 'ekhiamir@gmail.com',
+    icon: FaEnvelope,
+    href: 'mailto:ekhiamir@gmail.com',
+  },
+];
 
 export const PEnavLinks = [
     {

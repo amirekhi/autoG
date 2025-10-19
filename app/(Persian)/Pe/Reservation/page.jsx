@@ -18,7 +18,7 @@ export const dynamic = 'force-dynamic';
 const  Reservation = async ({searchParams}) => {
   const SearchParams = await searchParams
    
-  const id = SearchParams._id
+  const id = SearchParams.id
   const client = await clientPromise;
   const db = client.db(process.env.MONGODB_DB);
   const Car = await db.collection('Cars').findOne({ _id: new ObjectId(id) } );
@@ -45,27 +45,27 @@ const  Reservation = async ({searchParams}) => {
                     <h1 className='text-justify-right'>سلام به صفحه رزرو کردن ماشین خوشامدید اطلاعات ماشین مورد نظر  در باکس اطلاعات و عکس های ماشین مورد نظر در باکس گالری به نمایش گزاشته شده  در صورت تایید با فشردن دکمه درخاست رزرو درخاست شما ثبت و با شما تماس خواهد گرفته شد </h1>
                 </div>
               </div> */}
-              <div className='w-[90%] h-[80vh] max-md:h-auto mx-auto flex justify-center  gap-8 items-start relative max-md:flex-col max-md:items-center mt-20 '>
+              <div className='w-[90%] h-[650px] max-md:h-auto mx-auto flex justify-center  gap-8 items-start relative max-md:flex-col max-md:items-center mt-20 max-md:mt-4 '>
                 <div className='w-[40%] h-[60vh]  max-md:h-[50vh] flex justify-start items-center flex-col  max-md:w-full max-md:mt-12 p-2 ' >
                     <ReservationGallery ImageUrls = {Car?.ImageUrls } />
                 </div>
-                <div className='w-[40%] h-[60vh]   rounded-lg  max-md:mt-12  p-6 pl-12  max-md:pl-6  max-md:w-full max-md:h-[80vh]    max-md:mb-12' >            
+                <div className='w-[40%] h-[60vh]   rounded-lg  max-md:mt-4  p-6 pl-12  max-md:pl-6  max-md:w-full max-md:h-[80vh]    max-md:mb-4' >            
                   {/* <h3 className='w-full flex gap-4 justify-center  items-center text-2xl font-semibold max-md:justify-end'>اطلاعات ماشین مورد نظر</h3>    */}
-                  <h1 className='w-[40%]  text-3xl font-semibold max-md:w-[80%] text-black '> {Car.model }</h1> 
+                  <h1 className='  text-3xl font-semibold max-md:w-[80%] text-black text-right w-full'> {Car.PE.مدل }</h1> 
                    {/* <div className='grid grid-cols-3 mt-12 w-full text-right mx-auto max-md:grid-cols-1'>
                         <h3 className=' font-semibold block ' >{Car?.year} :<span className='text-xl md:text-2xl text-black'> سال ساخت</span>  </h3>
                         <h3 className=' font-semibold block ' >{Car?.city_mpg} :<span className='text-xl md:text-2xl text-black'> کیلومتر کارکرد</span>  </h3> 
                         <h3 className='font-semibold block ' >{Car?.make} :<span className='text-xl md:text-2xl text-black'> سازنده  </span>  </h3>     
                    </div> */}
-
-                        <p className='text-lg font-bold text-blue-500 mt-2' >$2000  -  $3000</p>
-                       <p className='w-full text-right leading-loose mt-10'>
-                        {Car?.describtion}  
+                      {Car?.PE?.قیمت && <p className='text-lg font-bold text-blue-500 mt-2 text-right' >قیمت : {Car.PE.قیمت}</p>}
+                        
+                       <p className='w-full text-right leading-loose mt-4'>
+                        {Car?.PE?.توضیحات}  
                             
                       </p>
-                       <div className='w-full pt-[200px]' >
+                       <div className='w-full pt-[200px] max-md:pt-4' >
                           <ReservigBut Title={'درخاست رزرو کردن'} CarId ={id}/>
-                          <ViewMore Title={'اطلاعات بیشتر'} Car={ViewCar} />
+                          <ViewMore Title={'اطلاعات بیشتر'} Car={ViewCar.PE} />
                         </div>
                 </div>
               </div>

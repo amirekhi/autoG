@@ -4,9 +4,9 @@ const Whyus = () => {
   return (
     <section className='xl:w-[80%] w-full mx-auto min-h-[100vh] py-12 '  >
         <div className='w-[95%] mx-auto flex justify-start items-center flex-col ' >
-            <h3 className='text-blue-500 xl:text-6xl text-5xl font-semibold  mt-20 max-lg:text-4xl text-shadow-3d-subtle ' >Why Choose Us?</h3>
+            <h3 className='text-blue-500 xl:text-6xl  font-semibold  mt-20 max-lg:text-2xl text-shadow-3d-subtle ' >Why Choose Us?</h3>
             <div className='w-full flex justify-center items-start mt-20 max-lg:flex-col '>
-                    <p className='text-[#797979] text-justify w-[70%] text-lg leading-loose p-3 max-lg:w-full'>
+                    <p className='text-[#797979] text-justify w-[70%] text-lg leading-loose p-3 max-lg:w-full max-md:text-sm'>
                                       🌟 Leader in Luxury Car Market
                   We are one of the most successful companies in buying and selling luxury cars. With extensive experience and a specialized team, we ensure that the best cars are provided to you under ideal conditions.
 

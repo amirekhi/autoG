@@ -174,8 +174,8 @@ return init_data
   return (
     <div className='mt-40 padding-x padding-y max-md:mt-12  overflow-x-hidden max-width' id='discover'>
     <div className='home__text-container'>
-      <h1 className='text-4xl font-extrabold text-shadow-3d-subtle'>Cars</h1>
-      <p className='w-[700px] mt-8 mb-12 text-lg max-md:w-full'>In this section, we have provided features that allow you to search for your desired car using precise filters. Simply select your desired features, and find the best car from a wide range of options.</p>
+      <h1 className='text-4xl max-md:text-2xl font-extrabold text-shadow-3d-subtle'>Cars</h1>
+      <p className='w-[700px] mt-8 mb-12 text-lg max-md:text-sm max-md:w-full'>In this section, we have provided features that allow you to search for your desired car using precise filters. Simply select your desired features, and find the best car from a wide range of options.</p>
     </div>
 
     <div className='home__filters'>

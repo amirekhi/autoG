@@ -4,9 +4,9 @@ const PEWhyus = () => {
   return (
     <section className=' xl:w-[80%] mx-auto w-full min-h-[100vh] py-12 ' >
         <div className='w-[90%] mx-auto flex justify-start items-center flex-col ' >
-            <h3 className='text-shadow-3d-subtle xl:text-6xl text-5xl font-semibold  mt-20 max-lg:text-4xl max-lg:text-center' >چرا ما را انتخاب کنید؟</h3>
-            <div className='w-full flex justify-center flex-row-reverse items-start mt-20 max-lg:flex-col '>
-                    <p className='text-[#797979] text-justify-right w-[70%] text-lg leading-loose p-3  max-lg:w-full'>
+            <h3 className='text-shadow-3d-subtle xl:text-6xl text-5xl font-semibold  mt-20 max-md:mt-10 max-lg:text-2xl max-lg:text-center' >چرا ما را انتخاب کنید؟</h3>
+            <div className='w-full flex justify-center flex-row-reverse items-start mt-20 max-md:mt-4 max-lg:flex-col '>
+                    <p className='text-[#797979] text-justify-right w-[70%] text-lg leading-loose p-3  max-lg:w-full max-md:text-sm'>
                     چرا ما را انتخاب کنید؟
 
 🌟 پیشرو در بازار خودروهای لوکس

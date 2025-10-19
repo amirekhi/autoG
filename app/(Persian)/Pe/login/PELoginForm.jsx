@@ -5,6 +5,8 @@ import { useFormStatus } from "react-dom";
 import { login } from "@/app/(index)/login/actions";
 import { useEffect } from "react";
 import SpinningLoading from "@/components/SpinningLoading";
+import Link from "next/link";
+
 
 export function PELoginForm() {
   const [state, loginAction] = useActionState(login);
@@ -42,6 +44,7 @@ export function PELoginForm() {
                <p className="text-red-500">{state.errors.password}</p>
             )}
             <SubmitButton />
+            <Link href={'/Pe/Sign-Up'}  className="mt-4 w-full text-right underline text-blue-500 font-semibold text-lg" >ساخت حساب کاربری جدید ؟؟</Link>
           </form>
      </>
   );
@@ -51,7 +54,7 @@ function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
-    <button disabled={pending} type="submit " className="border-2 w-[50%] mx-auto border-gray-400 rounded-lg p-6 hover:bg-[#797979] transition duration-200">
+    <button disabled={pending} type="submit " className="border-2 w-[50%] mx-auto border-gray-400 rounded-lg p-4 hover:bg-[#797979] transition duration-200">
      {pending ? (<SpinningLoading size={8}/>) : ('وارد شوید')}  
     </button>
   );

@@ -13,8 +13,8 @@ const BHero = () => {
       alt="bg image" 
     />
     <div className="text-white relative z-10 lg:ml-12 w-[40vw] font-semibold max-md:text-center max-md:w-full px-8 ">
-      <h1 className='text-6xl  max-md:text-4xl text-shadow-3d-subtle'> <span className='text-blue-500'>Blog </span> Section:</h1>
-      <p className='text-2xl mt-12 max-md:text-lg  max-w-[500px]'> In the news <span className='text-blue-500'>blog </span> section, we post the most important and hot car news daily. From introducing the latest luxury car models to market analysis, new technologies, new laws, and everything that matters to you as a car enthusiast.</p>
+      <h1 className='text-6xl max-md:text-2xl   text-shadow-3d-subtle'> <span className='text-blue-500'>Blog </span> Section:</h1>
+      <p className='text-2xl mt-12  max-md:text-sm max-w-[500px]'> In the news <span className='text-blue-500'>blog </span> section, we post the most important and hot car news daily. From introducing the latest luxury car models to market analysis, new technologies, new laws, and everything that matters to you as a car enthusiast.</p>
     </div>
   
   </section>

@@ -10,7 +10,7 @@ import Resimages from "./Resimages";
 
 
 
-const CarDetails = ({ isOpen, closeModal, car }) => (
+const CarDetails = ({ isOpen, closeModal, car , ImageUrls }) => (
   <>
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as='div' className='relative z-50' onClose={closeModal}>
@@ -53,16 +53,16 @@ const CarDetails = ({ isOpen, closeModal, car }) => (
                 </button>
 
                 <div className='flex-1 flex flex-col gap-3'>
-                 <Resimages images={car.ImageUrls} />
+                 <Resimages images={ImageUrls} />
                 </div>
 
                 <div className='flex-1 flex flex-col gap-2'>
                   <h2 className='font-semibold text-xl capitalize'>
-                    {car.EN.make} {car.EN.model}
+                    {car.make} {car.model}
                   </h2>
 
                   <div className='mt-3 flex flex-wrap gap-4'>
-                    {Object.entries(car.EN).map(([key, value]) => {
+                    {Object.entries(car).map(([key, value]) => {
                          if (key === "ImageUrls" || key === "_id" || key === 'Categorie') {
                           return ''; // Skip rendering for this key
                         }

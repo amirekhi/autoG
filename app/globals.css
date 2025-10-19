@@ -195,7 +195,7 @@ html, body {
 }
 
 .car-card__content {
-  @apply w-full flex justify-between items-start gap-2;
+  @apply w-full flex  items-start gap-2;
 }
 
 .car-card__content-title {
@@ -514,4 +514,13 @@ html, body {
       -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
+}
+
+/* styles/globals.css */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

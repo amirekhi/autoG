@@ -19,9 +19,9 @@ const RelatedProducts = ({Cat , Title}) => {
      } , [])
 
   return (
-    <section className='w-[80%] mx-auto max-md:mt-20'>
+    <section className='w-[80%] mx-auto max-md:mt-10'>
       {Products.length != 0 &&  <h2 className={`text-blue-500 text-4xl text-shadow-3d-subtle ${Title == "Related Cars" ? ('') : ('text-right ')} max-md:text-center `}>{Title}</h2>}
-    <div className='w-full relative grid grid-cols-4  gap-10 my-20 max-md:grid-cols-1' >
+    <div className='w-full relative grid grid-cols-4  gap-10 my-20  max-md:my-4 max-md:gap-4 max-md:grid-cols-1' >
        {Products.map((product , index) => (
         <CarCard key={index} car={product} />
        ))

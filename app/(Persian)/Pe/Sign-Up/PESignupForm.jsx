@@ -4,7 +4,7 @@ import { SignUp } from "@/app/(index)/login/actions";
 import { useFormStatus } from "react-dom";
 import { useActionState, useEffect } from "react";
 import SpinningLoading from "@/components/SpinningLoading";
-
+import Link from "next/link";
 
 export function PESignUpForm() {
   const [state, SignUpAction] = useActionState(SignUp);
@@ -51,6 +51,7 @@ export function PESignUpForm() {
                <p className="text-red-500">{state.errors.password}</p>
             )}
             <SubmitButton />
+            <Link href={'/Pe/login'}  className="mt-4 w-full text-right underline text-blue-500 font-semibold text-lg" >ورود با حساب کاربری قبلی ؟؟</Link>
           </form>
     </>
   );

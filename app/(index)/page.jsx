@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-import HSlider from '@/components/HSlider'
+
 import Hero from '@/components/Hero'
 import About from '@/components/About'
 import Brands from '@/components/Brands'
@@ -11,7 +11,7 @@ import Feedbacks from '@/components/Feedback/Feedbacks'
 import HowItsDone from '@/components/HowItsDone'
 import Prises from '@/components/Prises'
 import Categories from '@/components/Categories'
-
+import CardCarousel from '@/components/CardCarousel'
 
 const Home = () => {
 
@@ -19,14 +19,15 @@ const Home = () => {
   return (
     <>
       <Hero/>
-      <HSlider/>  
+      <CardCarousel/>
+      {/* <HSlider/>   */}
       <Categories/>
-      <HowItsDone/>
+      {/* <HowItsDone/> */}
       <About/>
-      <Prises/>
-      <Whyus/> 
+      {/* <Prises/>
+      <Whyus/>  */}
       <Brands/>
-      <Feedbacks/>
+    
     </>
     
   )

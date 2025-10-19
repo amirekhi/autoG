@@ -78,68 +78,70 @@ export async function login(prevState , formData) {
   };
  }
 
-  
+   
  
  
   
-  await createSession(res.username , res.phoneNumber , res.email);
-  return {
-    errors: {
-      res: ['User-logged'],
+  await createSession(res.username , res.phoneNumber , res.email , res.userRole);
+   if (res.userRole === 'admin') {
+      // Redirect admin user to /Dash
+      return redirect('/Dash');
+    } else{
+      return redirect('/')
     }
-}
   
 }
 
 
-export async function SignUp (prevState , formData) {
+export async function SignUp(prevState, formData) {
   const result = SignUpSchema.safeParse(Object.fromEntries(formData));
 
   const client = await clientPromise;
   const db = client.db(process.env.MONGODB_DB);
 
-  
-
+  // Validate the form data
   if (!result.success) {
     return {
       errors: result.error.flatten().fieldErrors,
     };
   }
-  
-
 
   const data = {
     ...result.data,
     email: result.data.email.toLowerCase(),
+    userRole: 'user',  // Default role to 'user'
   };
- 
-  const exist = await db.collection('Users').findOne({ email : data.email } );
-  
-  if(exist != null) {
-    console.log('user Exist')
+
+  // Check if the user already exists
+  const exist = await db.collection('Users').findOne({ email: data.email });
+
+  if (exist != null) {
+    console.log('User exists');
     return {
       errors: {
-        email: ["user exist"],
-      }
+        email: ["User already exists"],
+      },
+    };
   }
-  }
+
+  // Insert the user into the database with the default role
   const res = await db.collection('Users').insertOne(data);
-  
-  if(res.acknowledged == true && res != null){
-      await createSession(data.username , data.phoneNumber , data.email);
-      return {
-        errors: {
-          res: ['User-added'],
-        }
-    }
+
+  if (res.acknowledged === true && res != null) {
+    // Create a session after user creation
+    await createSession(data.username, data.phoneNumber, data.email , data.userRole);
+
+    return redirect("/")
   }
- 
-  
 
-
-
-
+  // Handle any unexpected failure
+  return {
+    errors: {
+      res: ['Error adding user'],
+    },
+  };
 }
+
 
 export async function logout( requestUrl) {
   await deleteSession();

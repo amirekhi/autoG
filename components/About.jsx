@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 const About = () => {
   return (
-    <section className='2xl:w-[80%] w-full max-lg:p-3 mx-auto h-auto max-lg:h-auto flex  justify-center items-center max-lg:flex-col   pb-16 ' >
-        <div className='w-[50%] h-[500px] mx-auto  flex justify-center  items-center flex-col relative max-lg:w-full max-lg:h-[700px]'>
-            <h1 className=' xl:text-6xl text-5xl font-semibold mb-12    text-shadow-3d-subtle max-lg:text-4xl'>About Us</h1>
+    <section className='2xl:w-[80%] w-full max-lg:p-3 mx-auto h-auto max-lg:h-auto flex  justify-center items-center max-lg:flex-col   pb-16  max-md:mt-6' >
+        <div className='w-[50%] h-[500px] mx-auto  flex justify-center  items-center flex-col relative max-lg:w-full max-lg:h-[400px]'>
+            <h1 className=' xl:text-6xl text-5xl font-semibold mb-12    text-shadow-3d-subtle max-lg:text-2xl'>About Us</h1>
             {/* <p className='max-w-[60%] text-xl  text-blue-300 leading-loose pt-6 max-md:max-w-full text-justify-center max-md:p-0 max-md:pt-3 p-3'>Lorem ipsum dolor sit amet ullam rerum, debitis iure, laboriosam aspernatur!</p> */}
-            <p className='max-w-[80%] text-lg max-lg:p-12 text-[#797979] leading-loose max-lg:max-w-full text-justify-center max-md:p-0 pt-12 p-3'>We are one of the most successful companies in the luxury car market, working with high-end vehicles and offering 100% delivery guarantees. With a dedicated team and years of experience, we ensure that you get the best cars under the best conditions. Our commitment to customer satisfaction and attention to detail make us your go-to choice for luxury car purchases.</p>
+            <p className='max-w-[80%] text-lg max-lg:p-12 text-[#797979] leading-loose max-lg:max-w-full text-justify-center max-md:p-3 pt-12 p-3 max-md:text-sm'>We are one of the most successful companies in the luxury car market, working with high-end vehicles and offering 100% delivery guarantees. With a dedicated team and years of experience, we ensure that you get the best cars under the best conditions. Our commitment to customer satisfaction and attention to detail make us your go-to choice for luxury car purchases.</p>
 
         </div>
         <div className='w-[50%] h-[100vh]  flex justify-center items-center max-lg:w-full  max-lg:h-[80vh]'>

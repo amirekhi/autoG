@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 const PEAbout = () => {
   return (
-    <section className='2xl:w-[80%] w-[95%] mx-auto h-auto max-lg:h-auto flex   p-4 justify-center items-center max-lg:flex-col  pb-16'>
-        <div className='w-[50%] h-[500px] mx-auto  flex justify-center  items-center flex-col relative max-lg:w-full max-lg:h-[700px]'>
-            <h1 className=' xl:text-6xl text-5xl font-semibold mb-12   text-shadow-3d-subtle max-lg:text-4xl'>درباره ما</h1>
-            <p className='max-w-[60%] text-xl   leading-loose pt-6 max-lg:max-w-full text-justify-center max-lg:text-[16px]  p-3'>اشنایی بیشتر با توانایی ها و اعتبار و روند کار این مجموعه <span className='text-blue-400 font-bold text-2xl'>موجب خاطر جمعی</span>  شما عزیزان میباشد و <span className='text-blue-400 font-bold text-2xl'>رضایت شما</span> در خرید که هدف اصلی ما میباشد   </p>
-            <p className='max-w-[80%] text-lg  max-lg:p-12 text-[#797979] leading-loose  max-lg:max-w-full text-justify-center max-md:p-0 max-lg:pt-12 pt-12  p-3 max-lg:text-[16px]'> ما پیشرو ترین و موفق‌ ترین مجموعه در خرید و فروش خودروهای لوکس هستیم. با سال‌ها تجربه و همکاری با برترین برندهای خودرویی، بهترین گزینه‌ها را برای مشتریان خاص و مشکل‌ پسند فراهم کرده‌ایم.
+    <section className='2xl:w-[80%] w-[95%] mx-auto h-auto max-lg:h-auto flex   p-4 justify-center items-center max-lg:flex-col  pb-16 max-md:mt-6'>
+        <div className='w-[50%] h-[500px] mx-auto  flex justify-center  items-center flex-col relative max-lg:w-full max-lg:h-[400px]'>
+            <h1 className=' xl:text-6xl text-5xl font-semibold mb-12   text-shadow-3d-subtle max-lg:text-2xl'>درباره ما</h1>
+            <p className='max-w-[60%] text-xl   leading-loose pt-6 max-lg:max-w-full text-justify-center max-lg:text-[14px]  p-3'>اشنایی بیشتر با توانایی ها و اعتبار و روند کار این مجموعه <span className='text-blue-400 font-bold text-lg'>موجب خاطر جمعی</span>  شما عزیزان میباشد و <span className='text-blue-400 font-bold text-lg'>رضایت شما</span> در خرید که هدف اصلی ما میباشد   </p>
+            <p className='max-w-[80%] text-lg  max-md:text-sm max-lg:p-12 text-[#797979] leading-loose  max-lg:max-w-full text-justify-center max-md:p-0 max-lg:pt-12 pt-12  p-3 max-lg:text-[16px]'> ما پیشرو ترین و موفق‌ ترین مجموعه در خرید و فروش خودروهای لوکس هستیم. با سال‌ها تجربه و همکاری با برترین برندهای خودرویی، بهترین گزینه‌ها را برای مشتریان خاص و مشکل‌ پسند فراهم کرده‌ایم.
 
 تعهد ما، ارائه خدماتی بی‌ نقص همراه با ۱۰۰٪ ضمانت تحویل است. هر خودرویی که از ما انتخاب کنید، با اطمینان کامل و در کوتاه‌ترین زمان به شما تحویل داده می‌شود.
 

@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react'
 import Image from 'next/image'
-import logo from '@/public/logo.svg'
+import logo from '@/public/logo.png'
 import Link from 'next/link'
 import { useState } from 'react'
 import { menu, close } from '@/assets'
@@ -15,14 +15,16 @@ import { redirect } from 'next/navigation'
 import { gettingClientsideSession } from '@/app/(index)/login/actions'
 import { logout } from '@/app/(index)/login/actions'
 import { AiOutlinePhone } from 'react-icons/ai'
-
+import { usePathname } from 'next/navigation'
 
 const PENavbar = () => {
   const [active , setActive] = useState("")
   const menuRef = useRef(null)
   const [toggle , setToggle] = useState(false)
   const [Session ,setSession] = useState('')
-  
+  const pathname = usePathname()
+
+
   let NavSession = Session || ''
   
   function shortenString(str, maxLength) {
@@ -30,6 +32,9 @@ const PENavbar = () => {
     return str.substring(0, maxLength) + '...';
   }
   
+  useEffect(() => {
+    setToggle(false)
+  }, [pathname])
 
   useEffect( () => { 
     const getSession = async ( ) => {
@@ -65,9 +70,9 @@ const PENavbar = () => {
 
   return (
     <header className=' relative max-w-full  lg:max-w-[95%] 2xl:max-w-[80%]   mx-auto  z-50 h-[120px]  flex text-black justify-around items-center   max-xl:justify-between bg-white' >
-      <Link href={'/Pe'} className={`${NavSession != '' && ('max-md:hidden')}`} ><Image src={logo} height={80} alt='menu' className='object-contain  ml-8 -translate-y-6  hover:-translate-y-8 transition  duration-300 ease-in-outs '  /></Link> 
-      {NavSession != '' ? (<div className='flex justify-center items-center gap-3'><h3 className='text-2xl font-semibold max-md:pl-6'>{ shortenString(NavSession.userId , 8)}</h3><button className='w-[100px] h-[50px] rounded-full hover:scale-110 transition duration-200   bg-red-400 text-white max-md:w-[80px] ' onClick={ async () => { await logout()
-       window.location.reload() }} >خروج</button> </div>) : (<div className='flex gap-4 w-[33%] py-4 justify-center items-center h-full max-sm:flex-col '><button className='w-[100px] h-[50px] rounded-full hover:scale-110 transition duration-200   bg-gray-400 text-white max-md:w-[80px] ' onClick={()=> {redirect('/Pe/Sign-Up')}} >ثبت نام</button> <button className='w-[100px] h-[50px] rounded-full   hover:scale-110 transition duration-200 bg-blue-500 text-white  max-md:w-[80px]' onClick={()=> {redirect('/Pe/login')}} >ورود</button> </div>)}
+      <Link href={'/Pe'} className={`${NavSession != '' && ('max-md:hidden')}`} ><Image src={logo} height={100} alt='menu' className='object-contain  ml-8  max-md:ml-2    '  /></Link> 
+      {NavSession != '' ? (<div className='flex justify-center items-center gap-3'><h3 className='text-2xl font-semibold max-md:pl-6'>{ shortenString(NavSession.userId , 8)}</h3><button className='w-[150px] h-[50px] rounded-full hover:scale-110 transition duration-200   bg-red-400 text-white max-md:w-[80px] ' onClick={ async () => { await logout()
+       window.location.reload() }} >خروج</button> </div>) : (<div className='flex gap-4 w-[33%] py-4 justify-center items-center h-full max-sm:flex-col '> <button className='w-[100px] h-[50px] rounded-full   hover:scale-110 transition duration-200 bg-blue-500 text-white max-md:text-sm  max-md:w-[95px] p-2' onClick={()=> {redirect('/Pe/login')}} >ورود / ثبت نام</button> </div>)}
       <nav className=' flex justify-center items-center -translate-y-20 gap-11 max-xl:hidden' id='navbar'>
               {PEnavLinks.map((link)=> (
                 <Link key={link.path} href={link.path} className={` ${link.path === active ? 'text-blue-400 border-b-2 border-blue-600' : 'text-secondary'} hover:text-blue-700 font-bold hover:scale-125  transition duration-300 ease-in-outs `  } onClick={() => {setActive(link.path)}} > {link.title} </Link>
@@ -86,7 +91,7 @@ const PENavbar = () => {
             src={toggle ? close : menu} 
             height={40} 
             width={40} 
-            className="-translate-x-10" 
+            className="-translate-x-4" 
             alt="menu" 
             onClick={() => setToggle(!toggle)} 
           />

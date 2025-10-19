@@ -5,6 +5,7 @@ import { useFormStatus } from "react-dom";
 import { login } from "./actions";
 import { useEffect } from "react";
 import SpinningLoading from "@/components/SpinningLoading";
+import Link from "next/link";
 
 export function LoginForm() {
   const [state, loginAction] = useActionState(login);
@@ -42,6 +43,7 @@ export function LoginForm() {
                <p className="text-red-500">{state.errors.password}</p>
             )}
             <SubmitButton />
+            <Link href={'/Sign-Up'}  className="mt-4 w-full  underline text-blue-500 font-semibold text-lg" >do not have an account ?(SignUp)</Link>
           </form>
      </>
   );

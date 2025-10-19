@@ -72,7 +72,7 @@ const CarCard = ({ car }) => {
   const carRent = calculateCarRent(Milage || 100, year || 100);
 
   return (
-    <div className="car-card group mx-auto relative  py-6 ">
+    <div className="car-card group mx-auto relative  py-6  max-lg:my-5">
       <button onClick={ ()=> handleDelete()} className='absolute top-0 right-0 m-4 z-10 hover:scale-125 transition duration-200  ' ><  Image objectFit='cover'  src={close} alt='close' width={30} /></button>
      
       <div className="car-card__content px-6">

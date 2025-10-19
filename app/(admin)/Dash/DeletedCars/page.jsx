@@ -54,7 +54,7 @@ const DeletedCars = () => {
           <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
          </div>)
      : (<section className='ml-6 max-md:ml-0  ' >
-            <div className='home__cars-wrapper xl:grid-cols-3 2xl:grid-cols-4  lg:grid-cols-2 max-lg:grid-cols-1'>
+            <div className='home__cars-wrapper xl:grid-cols-3 2xl:grid-cols-4  lg:grid-cols-2 max-lg:grid-cols-1 '>
               {slicedCars?.map((car , index) => (
                 <CarCardthree key={index} car={car} />
               ))}

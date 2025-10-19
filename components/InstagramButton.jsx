@@ -3,7 +3,7 @@ import { FaInstagram } from 'react-icons/fa';
 
 const InstagramButton = () => {
   return (
-    <Link href={'https://www.instagram.com/amir_ekh_?igsh=YzU3Mnh5MWx3aXRj'} className="block translate-y-10">
+    <Link href={'https://www.instagram.com/nemati_motors?igsh=MXV3ZDRtZnR2eTdmNg=='} className="block translate-y-10">
       <button
         className="rounded-full mt-4 hover:scale-125 transition duration-300 ease-in-out text-white font-bold h-[60px] w-[120px] flex items-center justify-center"
         style={{

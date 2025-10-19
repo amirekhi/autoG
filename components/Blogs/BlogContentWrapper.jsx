@@ -19,8 +19,8 @@ const BlogContentWrapper = () => {
     <section className="w-full  ">
       {loading == true ? (<div className='w-full h-[500px] col-span-3  text-4xl flex justify-center items-center font-bold'><SpinningLoading size={16}/></div>) 
       : ( <>
-      <div className='flex justify-center items-center h-[300px] w-full'>
-        <h2 className='text-5xl font-semibold text-shadow-3d-subtle  max-md:text-3xl px-8 text-center ' > Check Out Our blogs </h2>
+      <div className='flex justify-center items-center h-[200px] max-md:h-[100px] w-full'>
+        <h2 className='text-5xl max-md:text-2xl font-semibold text-shadow-3d-subtle  px-8 text-center ' > Check Out Our blogs </h2>
       </div>
       
       <div className={`mt-auto grid grid-cols-6 gap-[1px]  `}  style={{ height: gridHeight }} >
@@ -57,10 +57,10 @@ const BlogContentWrapper = () => {
               className={`${gridClasses} group flex items-start justify-end flex-col text-white text-lg font-bold relative  overflow-hidden  bg-black `}
             >
                 <Image src={item.HeroImgUrl || '/bgimg.jpg'} className='w-full h-full object-cover  hover:opacity-30 z-20  duration-[3s] transition hover:scale-125' fill sizes='100%' alt={item.Headerdescribtion}/>
-                <h5 className=' absolute top-[50px] left-[10%]   '>{item.Headerdescribtion}</h5>
+                <h5 className=' absolute top-[50px] left-[5%]  max-md:left-[2%] max-md:text-sm   '>{item.Headerdescribtion}</h5>
                 <div className='flex flex-col justify-around items-start p-8 max-md:p-4 z-50 max-md:w-[50%] '>
-             <h4 className='text-3xl font-bold mb-1 group-hover:opacity-0 duration-[3s] transition'>{item.HeroTitle}</h4>
-             <h4 className='text-lg font-semibold mb-12 group-hover:opacity-0 duration-[3s] transition '>{item.HeroParag}</h4> 
+             <h4 className='text-3xl max-md:text-2xl font-bold mb-1 group-hover:opacity-0 duration-[3s] transition'>{item.HeroTitle}</h4>
+             <h4 className='text-lg font-semibold mb-12 max-md:text-sm group-hover:opacity-0 duration-[3s] transition '>{item.HeroParag}</h4> 
 
               <Link href={`/blog/${item.Url}`} >
                 <button className='w-[140px] h-[60px] border-white border-2 text-white flex justify-center items-center max-md:w-[80px] max-md:h-[40px] max-md:text-xs hover:scale-95 transition duration-200'> Show More</button>          

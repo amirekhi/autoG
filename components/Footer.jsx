@@ -11,9 +11,9 @@ const Footer = () => {
         <div className='w-[85%] mx-auto grid grid-cols-3 max-xl:grid-cols-1 ' >
           
           <div className='h-[50vh]  flex justify-center  md:justify-start  items-start flex-col max-xl:items-center  max-xl:h-auto  max-xl:py-16 max-xl:border-b-4 max-xl:border-blue-900' >
-            <h3 className='text-4xl font-semibold mb-8  max-xl:mb-4' >Pages</h3>
+            <h3 className='text-4xl font-semibold mb-8  max-xl:mb-4 max-md:text-2xl' >Pages</h3>
             {navLinks.map((nav)=> (
-               <p className='text-[#acabab] text-xl list-disc mt-6 xl:mt-3 transition duration-200 hover:scale-110 hover:text-white' key={nav.path} >
+               <p className='text-[#acabab] text-xl list-disc mt-6 xl:mt-3 transition duration-200 hover:scale-110 hover:text-white max-md:text-sm' key={nav.path} >
                <Link href={nav.path} >{nav.title}</Link> 
             </p>
           
@@ -22,28 +22,28 @@ const Footer = () => {
           </div>
         
           <div className='h-[50vh]  flex justify-center xl:justify-start  items-start flex-col max-xl:items-center  max-xl:h-auto  max-xl:py-16 max-xl:border-b-4  max-xl:border-blue-900 ' >
-            <h3 className='text-4xl font-semibold mb-8  max-md:mb-4' >Contact Us</h3>
-            <p className='text-[#acabab] text-lg list-disc mt-6  flex items-center justify-start   gap-4 max-xl:justify-between w-full ' >
-               <span className='font-semibild text-xl text-white flex items-center gap-4 justify-center'><FiPhone/>  Phone Number :</span> 02636553823
+            <h3 className='text-4xl font-semibold mb-8  max-md:mb-4 max-md:text-2xl' >Contact Us</h3>
+            <p className='text-[#acabab] text-lg list-disc mt-6  flex items-center justify-start   gap-4 max-xl:justify-between w-full   max-md:text-sm' >
+               <span className='font-semibild text-xl text-white flex items-center gap-4 justify-center max-md:text-sm'><FiPhone/>  Phone Number :</span> 02636553823
             </p>
-            <p className='text-[#acabab] text-lg list-disc mt-6  flex items-center justify-start  gap-4 max-xl:justify-between  w-full' >
-               <span className='font-semibild text-xl text-white flex items-center gap-4 justify-center'><FiPhone/>  Phone Number :</span> 02636553823
+            <p className='text-[#acabab] text-lg list-disc mt-6  flex items-center justify-start  gap-4 max-xl:justify-between  w-full  max-md:text-sm' >
+               <span className='font-semibild text-xl text-white flex items-center gap-4 justify-center max-md:text-sm'><FiPhone/>  Phone Number :</span> 02636553823
             </p>
-            <p className='text-[#acabab] text-lg list-disc mt-6 flex items-center justify-start gap-4 max-xl:justify-between  w-full' >
-                <span className='font-semibild text-xl text-white flex items-center gap-4 justify-center ' ><FiMapPin/>Location :</span > <span className='max-w-[50%]'>Karaj, Fardis, mallard blv ,51st</span>
+            <p className='text-[#acabab] text-lg list-disc mt-6 flex items-center justify-start gap-4 max-xl:justify-between  w-full  max-md:text-sm' >
+                <span className='font-semibild text-xl text-white flex items-center gap-4 justify-center  max-md:text-sm' ><FiMapPin/>Location :</span > <span className='max-w-[50%]'>Karaj, Fardis, mallard blv ,51st</span>
             </p>
            
           </div>
         
           <div className='h-[50vh]  flex justify-center  xl:justify-start items-start flex-col  max-xl:items-center max-xl:h-auto max-xl:py-16 ' >
-            <h3 className='text-4xl font-semibold mb-8 max-xl:mb-4 ' >Services</h3>
-            <p className='text-[#acabab] text-xl list-disc mt-6 transition duration-200 hover:scale-110 hover:text-white'  >
+            <h3 className='text-4xl font-semibold mb-8 max-xl:mb-4  max-md:text-2xl' >Services</h3>
+            <p className='text-[#acabab] text-xl list-disc mt-6 transition duration-200 hover:scale-110 hover:text-white max-md:text-sm'  >
                <Link href={'/Cars'} >Buying Cars ?</Link> 
             </p>
-            <p className='text-[#acabab] text-xl list-disc mt-6 transition duration-200 hover:scale-110 hover:text-white'  >
+            <p className='text-[#acabab] text-xl list-disc mt-6 transition duration-200 hover:scale-110 hover:text-white max-md:text-sm'  >
                <Link href={'/Blogs'} >Reading News ?</Link> 
             </p>
-            <p className='text-[#acabab] text-xl list-disc mt-6 transition duration-200 hover:scale-110 hover:text-white'  >
+            <p className='text-[#acabab] text-xl list-disc mt-6 transition duration-200 hover:scale-110 hover:text-white max-md:text-sm'  >
                <Link href={'/Cars/Hot'} >Best Deals ?</Link> 
             </p>
           </div>

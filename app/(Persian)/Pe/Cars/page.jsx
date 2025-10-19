@@ -180,8 +180,8 @@ return init_data
   return (
     <div className='mt-40 padding-x padding-y max-md:mt-12  overflow-x-hidden max-width' id='discover'>
     <div className=' flex flex-col items-end justify-start gap-y-2.5 text-black-100'>
-      <h1 className='text-4xl font-extrabold md:text-6xl text-shadow-3d-subtle'>ماشین ها</h1>
-      <p className='md:text-xl w-[700px] text-right mt-8 mb-12 text-[#777777] max-md:w-full'>  در این بخش، ما امکاناتی فراهم کرده‌ایم تا شما بتوانید خودروی مورد نظر خود را با استفاده از فیلترهای دقیق جستجو کنید. فقط کافیست ویژگی‌های مورد نظر خود را انتخاب کنید و از میان گزینه‌های متنوع بهترین خودرو را پیدا کنید</p>
+      <h1 className='text-2xl font-extrabold md:text-6xl text-shadow-3d-subtle'>ماشین ها</h1>
+      <p className='md:text-xl w-[700px] text-right text-sm mt-8 mb-12 text-[#777777] max-md:w-full'>  در این بخش، ما امکاناتی فراهم کرده‌ایم تا شما بتوانید خودروی مورد نظر خود را با استفاده از فیلترهای دقیق جستجو کنید. فقط کافیست ویژگی‌های مورد نظر خود را انتخاب کنید و از میان گزینه‌های متنوع بهترین خودرو را پیدا کنید</p>
     </div>
 
     <div className='home__filters'>

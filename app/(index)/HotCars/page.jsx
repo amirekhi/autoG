@@ -19,8 +19,8 @@ const HotCars = async () => {
   return (
     <div className='mt-40 max-md:mt-12 padding-x padding-y  overflow-x-hidden max-width' id='discover'>
     <div className='home__text-container'>
-      <h1 className='text-4xl font-extrabold'><span className=' text-shadow-3d-subtle'>Hot</span> Cars</h1>
-      <p className='text-lg w-[700px] mt-8 mb-12 max-md:w-full' >In this section, you can discover the latest and most popular cars that have attracted a lot of attention in the automotive world. These cars are at the top due to their unique design, advanced features, and high demand in the market. If you are looking for a car that will turn heads and provide you with a unique driving experience, this is the place for you!</p>
+      <h1 className='text-4xl max-md:text-2xl font-extrabold'><span className=' text-shadow-3d-subtle'>Hot</span> Cars</h1>
+      <p className='text-lg  max-md:text-sm w-[700px] mt-8 mb-12 max-md:w-full' >In this section, you can discover the latest and most popular cars that have attracted a lot of attention in the automotive world. These cars are at the top due to their unique design, advanced features, and high demand in the market. If you are looking for a car that will turn heads and provide you with a unique driving experience, this is the place for you!</p>
     </div>
 
    

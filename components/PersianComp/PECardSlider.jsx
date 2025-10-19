@@ -62,7 +62,7 @@ const PECardSlider = () => {
       >
         {Data?.map((item ,index) => (
           <SwiperSlide key={index}>
-            <Link href={`/Pe/Reservation?_id=${item._id}`}>
+            <Link href={`/Pe/Reservation?id=${item._id}`}>
                 <div className="flex flex-col gap-6 mb-20 group relative shadow-xl shadow-blue-400 ml-auto mr-auto text-white rounded-xl px-6 py-8 h-[350px] w-[315px] lg:h-[400px] lg:w-[350px] overflow-hidden cursor-pointer ">
                   <div
                     className="absolute inset-0 bg-cover bg-center"

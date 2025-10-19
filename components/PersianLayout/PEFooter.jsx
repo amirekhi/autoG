@@ -1,59 +1,163 @@
-import React from 'react'
-import { FiPhone } from 'react-icons/fi';
-import { FiMapPin } from 'react-icons/fi';
+'use client';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { FiPhone, FiMapPin, FiChevronDown } from 'react-icons/fi';
 import { PEnavLinks } from '@/constants';
 
-
 const PEFooter = () => {
+  const [openSection, setOpenSection] = useState(null);
+
+  const toggleSection = (section) => {
+    setOpenSection(openSection === section ? null : section);
+  };
+
+  const sectionClass =
+    'border-b border-white/20 py-4 md:border-none md:py-0';
+
   return (
-    <footer className='w-full h-[60vh] bg-blue-500 text-white relative  max-xl:h-auto py-16 max-md:py-8 ' >
-        <div className='w-[85%] mx-auto grid grid-cols-3 max-xl:grid-cols-1 ' >
-          
-          <div className='h-[50vh]  flex justify-center  xl:justify-start  items-end flex-col max-xl:items-center  max-xl:h-auto  max-xl:py-8 max-xl:border-b-4 max-xl:border-blue-900' >
-            <h3 className='text-4xl font-semibold mb-8  max-md:text-2xl max-xl:mb-4' >صفحات</h3>
-            {PEnavLinks.map((nav)=> (
-               <p className='text-[#acabab] text-xl list-disc mt-6 max-md:mt-2 xl:mt-3 transition duration-200 hover:scale-110 hover:text-white max-md:text-sm' key={nav.path} >
-               <Link href={nav.path} >{nav.title}</Link> 
-            </p>
-          
+    <footer
+      dir="rtl"
+      className="w-full bg-blue-600 text-white pt-10 pb-6 relative overflow-hidden"
+    >
+      {/* Top gradient line */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-white/40 to-blue-800" />
+
+      {/* Content grid */}
+      <div className="w-[90%] mx-auto grid md:grid-cols-3 gap-10 md:gap-8">
+        {/* Pages Section */}
+        <div className={`${sectionClass}`}>
+          <button
+            onClick={() => toggleSection('pages')}
+            className="w-full flex justify-between items-center md:block text-right"
+          >
+            <h3 className="text-xl font-semibold mb-2 md:mb-6">صفحات</h3>
+            <FiChevronDown
+              className={`md:hidden transition-transform ${
+                openSection === 'pages' ? 'rotate-180' : ''
+              }`}
+            />
+          </button>
+          <ul
+            className={`overflow-hidden transition-all duration-300 md:block ${
+              openSection === 'pages' ? 'max-h-40' : 'max-h-0 md:max-h-none'
+            }`}
+          >
+            {PEnavLinks.map((nav) => (
+              <li key={nav.path} className="mb-3">
+                <Link
+                  href={nav.path}
+                  className="text-white/70 hover:text-white transition-colors duration-200 text-sm"
+                >
+                  {nav.title}
+                </Link>
+              </li>
             ))}
-           
-          </div>
-        
-          <div className='h-[50vh]  flex justify-center xl:justify-start  items-end flex-col max-xl:items-center  max-xl:h-auto  max-xl:py-8 max-xl:border-b-4  max-xl:border-blue-900 ' >
-            <h3 className='text-4xl font-semibold mb-8  max-md:text-2xl  max-xl:mb-4' >با ما تماس بگیرید</h3>
-            <p className='text-[#acabab] text-lg list-disc mt-6 max-md:mt-2  flex items-center justify-start  flex-row-reverse  max-xl:justify-between gap-6 w-full ' >
-               <span className='font-semibild text-xl text-white flex items-center gap-4 justify-center max-md:text-sm'> : شماره تماس <FiPhone/> </span> 02636553823
-            </p>
-            <p className='text-[#acabab] text-lg list-disc mt-6 max-md:mt-2  flex items-center justify-start  flex-row-reverse max-xl:justify-between  gap-6 w-full' >
-               <span className='font-semibild text-xl text-white flex items-center gap-4 justify-center max-md:text-sm'>: شماره تماس <FiPhone/>  </span> 02636553823
-            </p>
-            <p className='text-[#acabab] text-lg list-disc mt-6 max-md:mt-2 flex items-center justify-start flex-row-reverse max-xl:justify-between  gap-6 w-full' >
-                <span className='font-semibild text-xl text-white flex items-center gap-4 justify-center max-md:text-sm ' > : ادرس نمایشگاه <FiMapPin/></span > <span className='max-w-[50%]'>استان البرز  ,  فردیس  ,  جاده ملارد ,  خیابان 51</span>
-            </p>
-           
-          </div>
-        
-          <div className='h-[50vh]  flex justify-center   xl:justify-start items-end flex-col  max-xl:items-center max-xl:h-auto max-xl:py-8 max-md:pb-12 ' >
-            <h3 className='text-4xl font-semibold mb-8 max-md:mb-4  max-md:text-2xl' >خدمات</h3>
-            <p className='text-[#acabab] text-xl list-disc mt-6 max-md:mt-2  transition duration-200 hover:scale-110 hover:text-white max-md:text-sm'  >
-               <Link href={'/Cars'} >خرید ماشین ؟</Link> 
-            </p>
-            <p className='text-[#acabab] text-xl list-disc mt-6 max-md:mt-2  transition duration-200 hover:scale-110 hover:text-white max-md:text-sm'  >
-               <Link href={'/Blogs'} > سوال اداری و حقوقی ؟</Link> 
-            </p>
-            <p className='text-[#acabab] text-xl list-disc mt-6  max-md:mt-2 transition duration-200 hover:scale-110 hover:text-white max-md:text-sm'  >
-               <Link href={'/Cars/Hot'} >بهترین ماشین ها ؟</Link> 
-            </p>
-          </div>
-        
-         
+          </ul>
         </div>
-        <div className='absolute bottom-0 right-0 left-0 h-[60px] bg-blue-900 text-center p-6 ' > <span  >All rights Reserved copy &copy;</span> </div>
 
+        {/* Contact Section (fixed alignment) */}
+        <div className={`${sectionClass}`}>
+          <button
+            onClick={() => toggleSection('contact')}
+            className="w-full flex justify-between items-center md:block text-right"
+          >
+            <h3 className="text-xl font-semibold mb-2 md:mb-6">
+              با ما تماس بگیرید
+            </h3>
+            <FiChevronDown
+              className={`md:hidden transition-transform ${
+                openSection === 'contact' ? 'rotate-180' : ''
+              }`}
+            />
+          </button>
+
+          <ul
+            className={`overflow-hidden transition-all duration-300 md:block ${
+              openSection === 'contact' ? 'max-h-60' : 'max-h-0 md:max-h-none'
+            }`}
+            dir='ltr'
+          >
+            <li className="flex   items-center justify-end gap-3 mb-3 text-sm text-white/80">
+              <FiPhone className="text-white text-lg" />
+              <span>۰۲۶۳۶۵۵۳۸۲۳</span>
+              <span className="text-white/60">: شماره تماس</span>
+            </li>
+
+            <li className="flex   items-center justify-end gap-3 mb-3 text-sm text-white/80">
+              <FiPhone className="text-white text-lg" />
+              <span>۰۲۶۳۶۵۵۳۸۲۳</span>
+              <span className="text-white/60">: شماره تماس</span>
+            </li>
+
+            <li className="flex   items-start justify-end gap-3 text-sm text-white/80">
+              <FiMapPin className="text-white text-lg mt-1" />
+              <span className="max-w-[70%]">
+                استان البرز، فردیس، جاده ملارد، خیابان ۵۱
+              </span>
+              <span className="text-white/60 whitespace-nowrap">
+                : آدرس نمایشگاه
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Services Section */}
+        <div className={`${sectionClass}`}>
+          <button
+            onClick={() => toggleSection('services')}
+            className="w-full flex justify-between items-center md:block text-right"
+          >
+            <h3 className="text-xl font-semibold mb-2 md:mb-6">خدمات</h3>
+            <FiChevronDown
+              className={`md:hidden transition-transform ${
+                openSection === 'services' ? 'rotate-180' : ''
+              }`}
+            />
+          </button>
+
+          <ul
+            className={`overflow-hidden transition-all duration-300 md:block ${
+              openSection === 'services' ? 'max-h-40' : 'max-h-0 md:max-h-none'
+            }`}
+          >
+            <li className="mb-3">
+              <Link
+                href="/Cars"
+                className="text-white/70 hover:text-white text-sm transition-colors duration-200"
+              >
+                خرید ماشین
+              </Link>
+            </li>
+            <li className="mb-3">
+              <Link
+                href="/Blogs"
+                className="text-white/70 hover:text-white text-sm transition-colors duration-200"
+              >
+                سوالات اداری و حقوقی
+              </Link>
+            </li>
+            <li className="mb-3">
+              <Link
+                href="/Cars/Hot"
+                className="text-white/70 hover:text-white text-sm transition-colors duration-200"
+              >
+                بهترین ماشین‌ها
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Footer Bottom */}
+      <div className="w-[90%] mx-auto border-t border-white/20 mt-8 pt-4 flex flex-col md:flex-row justify-between items-center text-xs text-white/70 text-center md:text-right">
+        <p>© {new Date().getFullYear()} AutoG Motors — تمامی حقوق محفوظ است.</p>
+        <p className="mt-2 md:mt-0">طراحی و توسعه توسط AutoG</p>
+      </div>
+
+      {/* Blue Glow Accent */}
+      <div className="absolute left-0 bottom-0 w-64 h-64 bg-blue-800 rounded-full blur-3xl opacity-20" />
     </footer>
-  )
-}
+  );
+};
 
-export default PEFooter
+export default PEFooter;

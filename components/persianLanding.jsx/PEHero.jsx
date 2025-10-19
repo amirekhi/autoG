@@ -4,7 +4,7 @@ import PEContext from '../PersianComp/PEContext'
 
 const PEHero = () => {
   return (
-   <section className='md:w-[80%] md:mx-auto  flex justify-around flex-row-reverse items-center max-md:flex-col '>
+   <section className='md:w-[80%] md:mx-auto md:h-[75vh] md:translate-y-[100px]   flex justify-around flex-row-reverse items-center max-md:flex-col '>
      <PEContext />
      <ImageSlider/>
    </section>

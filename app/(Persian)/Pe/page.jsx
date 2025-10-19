@@ -23,9 +23,9 @@ const Home = () => {
       <PECategories/>
       {/* <PEHowItsDone/> */}
       <PEAbout/>
-      <PEPrises/>
-      <PEWhyus/> 
-      <PEBrands/>
+      {/* <PEPrises/>
+      <PEWhyus/>  */}
+      {/* <PEBrands/> */}
      
     </>
     

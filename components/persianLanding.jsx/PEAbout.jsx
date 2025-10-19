@@ -1,30 +1,68 @@
-import React from 'react'
-import Image from 'next/image'
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const PEAbout = () => {
   return (
-    <section className='2xl:w-[80%] w-[95%] mx-auto h-auto max-lg:h-auto flex   p-4 justify-center items-center max-lg:flex-col  pb-16 max-md:mt-6'>
-        <div className='w-[50%] h-[500px] mx-auto  flex justify-center  items-center flex-col relative max-lg:w-full max-lg:h-[400px]'>
-            <h1 className=' xl:text-6xl text-5xl font-semibold mb-12   text-shadow-3d-subtle max-lg:text-2xl'>درباره ما</h1>
-            <p className='max-w-[60%] text-xl   leading-loose pt-6 max-lg:max-w-full text-justify-center max-lg:text-[14px]  p-3'>اشنایی بیشتر با توانایی ها و اعتبار و روند کار این مجموعه <span className='text-blue-400 font-bold text-lg'>موجب خاطر جمعی</span>  شما عزیزان میباشد و <span className='text-blue-400 font-bold text-lg'>رضایت شما</span> در خرید که هدف اصلی ما میباشد   </p>
-            <p className='max-w-[80%] text-lg  max-md:text-sm max-lg:p-12 text-[#797979] leading-loose  max-lg:max-w-full text-justify-center max-md:p-0 max-lg:pt-12 pt-12  p-3 max-lg:text-[16px]'> ما پیشرو ترین و موفق‌ ترین مجموعه در خرید و فروش خودروهای لوکس هستیم. با سال‌ها تجربه و همکاری با برترین برندهای خودرویی، بهترین گزینه‌ها را برای مشتریان خاص و مشکل‌ پسند فراهم کرده‌ایم.
-
-تعهد ما، ارائه خدماتی بی‌ نقص همراه با ۱۰۰٪ ضمانت تحویل است. هر خودرویی که از ما انتخاب کنید، با اطمینان کامل و در کوتاه‌ترین زمان به شما تحویل داده می‌شود.
-
-به ما اعتماد کنید و تجربه‌ای بی‌نظیر از خرید خودروهای لوکس را با ما داشته باشید! 🚗✨
-
-</p>
-
+    <section className="w-[95%] 2xl:w-[80%] mx-auto flex flex-col lg:flex-row justify-between items-center py-16 lg:py-24 px-4 lg:px-12 bg-gradient-to-b from-white via-blue-50 to-white">
+      
+      {/* Image Section */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        className="w-full lg:w-1/2 flex justify-center items-center mb-12 lg:mb-0"
+      >
+        <div className="relative w-[85%] h-[55vh] lg:h-[70vh] rounded-2xl overflow-hidden shadow-2xl shadow-blue-200">
+          <Image
+            src="/Instanemati.png"
+            alt="نمایی از نمایشگاه ما"
+            fill
+            className="object-cover object-top transition-transform duration-500 hover:scale-105"
+            sizes="100%"
+          />
         </div>
-        <div className='w-[50%] h-[100vh]  flex justify-center items-center max-lg:w-full  max-lg:h-[100vh]'>
-                  <div className='grid grid-cols-6 gap-6   h-[60%] w-[70%] max-lg:h-[80%] max-lg:w-full' >
-                    <div className='relative col-span-6 rounded-xl shadow-xl shadow-blue-400 overflow-hidden'><Image src={'/Instanemati.png'} className='w-full h-full object-cover object-top rounded-xl duration-200 transition hover:scale-110 ' fill sizes='100%' alt='main Image of our shop' /></div>
-                    {/* <div className='relative col-span-3 max-md:col-span-6 rounded-xl shadow-xl shadow-blue-400 overflow-hidden'><Image src={'/Instanemati.png'} className='w-full h-full object-cover object-top  rounded-xl duration-200 transition hover:scale-110 ' fill sizes='100%' alt='main Image of our shop' /></div>
-                    <div className='relative col-span-3 max-md:col-span-6 rounded-xl shadow-xl shadow-blue-400 overflow-hidden'><Image src={'/Instanemati.png'} className='w-full h-full object-cover object-top  rounded-xl duration-200 transition hover:scale-110' fill sizes='100%' alt='main Image of our shop' /></div> */}
-                  </div>
-              </div>
-    </section>
-  )
-}
+      </motion.div>
 
-export default PEAbout
+      {/* Text Section */}
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-end text-right"
+      >
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-blue-600">
+          درباره ما
+        </h1>
+
+        <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-[80%] lg:max-w-[70%] mb-6">
+          آشنایی بیشتر با توانایی‌ها، اعتبار و روند کار این مجموعه
+          <span className="text-blue-500 font-semibold"> موجب خاطر جمعی </span>
+          شما عزیزان می‌باشد و
+          <span className="text-blue-500 font-semibold"> رضایت شما </span>
+          در خرید، هدف اصلی ماست.
+        </p>
+
+        <p className="text-gray-600 text-[16px] md:text-lg leading-loose max-w-[85%] lg:max-w-[70%]">
+          ما پیشروترین و موفق‌ترین مجموعه در خرید و فروش خودروهای لوکس هستیم. با
+          سال‌ها تجربه و همکاری با برترین برندهای خودرویی، بهترین گزینه‌ها را برای
+          مشتریان خاص و مشکل‌پسند فراهم کرده‌ایم.
+          <br />
+          <br />
+          تعهد ما، ارائه خدماتی بی‌نقص همراه با ۱۰۰٪ ضمانت تحویل است. هر خودرویی
+          که از ما انتخاب کنید، با اطمینان کامل و در کوتاه‌ترین زمان به شما تحویل
+          داده می‌شود.
+          <br />
+          <br />
+          به ما اعتماد کنید و تجربه‌ای بی‌نظیر از خرید خودروهای لوکس را با ما
+          داشته باشید! 🚗✨
+        </p>
+      </motion.div>
+    </section>
+  );
+};
+
+export default PEAbout;

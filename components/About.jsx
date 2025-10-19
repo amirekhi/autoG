@@ -1,24 +1,55 @@
-import React from 'react'
-import Image from 'next/image'
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <section className='2xl:w-[80%] w-full max-lg:p-3 mx-auto h-auto max-lg:h-auto flex  justify-center items-center max-lg:flex-col   pb-16  max-md:mt-6' >
-        <div className='w-[50%] h-[500px] mx-auto  flex justify-center  items-center flex-col relative max-lg:w-full max-lg:h-[400px]'>
-            <h1 className=' xl:text-6xl text-5xl font-semibold mb-12    text-shadow-3d-subtle max-lg:text-2xl'>About Us</h1>
-            {/* <p className='max-w-[60%] text-xl  text-blue-300 leading-loose pt-6 max-md:max-w-full text-justify-center max-md:p-0 max-md:pt-3 p-3'>Lorem ipsum dolor sit amet ullam rerum, debitis iure, laboriosam aspernatur!</p> */}
-            <p className='max-w-[80%] text-lg max-lg:p-12 text-[#797979] leading-loose max-lg:max-w-full text-justify-center max-md:p-3 pt-12 p-3 max-md:text-sm'>We are one of the most successful companies in the luxury car market, working with high-end vehicles and offering 100% delivery guarantees. With a dedicated team and years of experience, we ensure that you get the best cars under the best conditions. Our commitment to customer satisfaction and attention to detail make us your go-to choice for luxury car purchases.</p>
+    <section className="relative w-full flex flex-col lg:flex-row justify-between items-center overflow-hidden py-20 lg:py-32 bg-gradient-to-b from-white via-blue-50 to-white">
+      {/* Left Text Section */}
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="w-full lg:w-1/2 px-6 lg:px-16 flex flex-col justify-center text-center lg:text-left"
+      >
+        <h1 className="text-5xl lg:text-6xl font-bold text-blue-600 mb-8">
+          About Us
+        </h1>
 
+        <p className="text-gray-600 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+          We are one of the most successful companies in the luxury car market,
+          working with high-end vehicles and offering 100% delivery guarantees.
+          With a dedicated team and years of experience, we ensure that you get
+          the best cars under the best conditions. Our commitment to customer
+          satisfaction and attention to detail make us your go-to choice for
+          luxury car purchases.
+        </p>
+      </motion.div>
+
+      {/* Right Image Section */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="w-full lg:w-1/2 h-[60vh] lg:h-[80vh] relative mt-12 lg:mt-0"
+      >
+        <div className="absolute inset-0 flex justify-center items-center">
+          <div className="relative w-[80%] h-[80%] rounded-2xl overflow-hidden shadow-2xl shadow-blue-300">
+            <Image
+              src="/Instanemati.png"
+              alt="Our luxury car showroom"
+              fill
+              className="object-cover object-top transition-transform duration-500 hover:scale-105"
+              sizes="100%"
+            />
+          </div>
         </div>
-        <div className='w-[50%] h-[100vh]  flex justify-center items-center max-lg:w-full  max-lg:h-[80vh]'>
-            <div className='grid grid-cols-6 gap-6   h-[60%] w-[70%] max-lg:h-[80%] max-lg:w-full' >
-              <div className='relative col-span-6 rounded-xl shadow-xl shadow-blue-400 overflow-hidden'><Image src={'/Instanemati.png'} className='w-full h-full object-cover object-top rounded-xl duration-200 transition hover:scale-110 ' fill sizes='100%' alt='main Image of our shop' /></div>
-              {/* <div className='relative col-span-3 max-md:col-span-6 rounded-xl shadow-xl shadow-blue-400 overflow-hidden'><Image src={'/Instanemati.png'} className='w-full h-full object-cover object-top  rounded-xl duration-200 transition hover:scale-110 ' fill sizes='100%' alt='main Image of our shop' /></div>
-              <div className='relative col-span-3 max-md:col-span-6 rounded-xl shadow-xl shadow-blue-400 overflow-hidden'><Image src={'/Instanemati.png'} className='w-full h-full object-cover object-top  rounded-xl duration-200 transition hover:scale-110' fill sizes='100%' alt='main Image of our shop' /></div> */}
-            </div>
-        </div>
+      </motion.div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

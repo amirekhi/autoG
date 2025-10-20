@@ -10,42 +10,73 @@ import Link from "next/link";
 export function LoginForm() {
   const [state, loginAction] = useActionState(login);
 
-
   useEffect(() => {
-    
-      if(state?.errors?.res == 'User-logged'){
-        window.location.reload()
-      }
-    } , [state])
+    if (state?.errors?.res === "User-logged") {
+      window.location.reload();
+    }
+  }, [state]);
 
-
-    
   return (
-        <>
-           <h1 className="font-semibold text-3xl mt-20" > Please login</h1>
-          <form action={loginAction} className= "   shadow-blue-600 flex max-md:w-[80vw] w-[30vw] my-16 flex-col gap-2 mt-8 border-gray-400  border-2 rounded-lg p-6  shadow-xl transform transition-transform duration-500 hover:scale-105 perspective-1000">
-            <div className="flex flex-col gap-2 p-6">
-              <input id="email"  className="p-6 border-gray-400  rounded-lg border-2" name="email" placeholder="Email" />
-            </div> 
+      <div className="bg-white w-[90vw] max-w-md rounded-2xl shadow-2xl p-10 transform transition-transform duration-500 hover:scale-[1.02]">
+        <h1 className="font-semibold text-3xl text-center mb-8 text-gray-800">
+          Please Login
+        </h1>
+
+        <form action={loginAction} className="flex flex-col gap-6">
+          {/* Email Field */}
+          <div className="flex flex-col">
+            <label htmlFor="email" className="font-medium text-gray-700 mb-2">
+              Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            />
             {state?.errors?.email && (
-               <p className="text-red-500">{state.errors.email}</p>
-              )}    
-            <div className="flex flex-col gap-2 p-6">
-              <input
-                className="p-6 border-gray-400 rounded-lg  border-2"
-                id="password"
-                name="password"
-                type="password"
-                placeholder="Password"
-              />
-            </div>
-            {state?.errors?.password && (
-               <p className="text-red-500">{state.errors.password}</p>
+              <p className="text-red-500 text-sm mt-1">{state.errors.email}</p>
             )}
-            <SubmitButton />
-            <Link href={'/Sign-Up'}  className="mt-4 w-full  underline text-blue-500 font-semibold text-lg" >do not have an account ?(SignUp)</Link>
-          </form>
-     </>
+          </div>
+
+          {/* Password Field */}
+          <div className="flex flex-col">
+            <label
+              htmlFor="password"
+              className="font-medium text-gray-700 mb-2"
+            >
+              Password
+            </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Enter your password"
+              className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            />
+            {state?.errors?.password && (
+              <p className="text-red-500 text-sm mt-1">
+                {state.errors.password}
+              </p>
+            )}
+          </div>
+
+          {/* Submit Button */}
+          <SubmitButton />
+
+          {/* Sign Up Link */}
+          <p className="text-center text-gray-600 text-sm mt-4">
+            Don’t have an account?{" "}
+            <Link
+              href="/Sign-Up"
+              className="text-blue-600 hover:text-blue-800 font-medium transition"
+            >
+              Sign Up
+            </Link>
+          </p>
+        </form>
+      </div>
+   
   );
 }
 
@@ -53,8 +84,12 @@ function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
-    <button disabled={pending} type="submit " className="border-2 w-[50%] mx-auto border-gray-400 rounded-lg p-6 hover:bg-[#797979] transition duration-200">
-     {pending ? (<SpinningLoading size={8}/>) : ('Login')}  
+    <button
+      disabled={pending}
+      type="submit"
+      className="mt-4 py-3 px-6 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white rounded-lg font-semibold transition duration-300 shadow-md hover:shadow-lg"
+    >
+      {pending ? <SpinningLoading size={8} /> : "Login"}
     </button>
   );
 }

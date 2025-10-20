@@ -61,7 +61,7 @@ const  Reservation = async ({searchParams}) => {
                             {Car.EN.describtion && Car.EN.describtion}
                       </p>
 
-                      <div className='w-full mt-[200px] max-md:mt-4 h-auto '>
+                      <div className='w-full mt-[200px] max-md:mt-4 h-auto flex justify-center gap-20 max-md:gap-5 items-center '>
                       <ReservigBut Title={'Reserve'} CarId ={id}/>
                       <ViewMore Title={'View more'} Car={ViewCar.EN} />
                       </div>

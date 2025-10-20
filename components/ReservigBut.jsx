@@ -34,7 +34,7 @@ const ReservigBut = ({CarId ,Title}) => {
   return (
     <>
        <ReservationForm  isOpen={isOpen} closeModal={() => setIsOpen(false)} CarId={CarId}  />
-       <button onClick={habdleRegister} className={`w-full h-[60px]  block  mt-8 transition duration-200 hover:scale-95 font-semibold  ${Res?.error == 'file_added' ? ('bg-green-800') : ('bg-green-500 text-white') }`} > {Res?.error == 'file_added' ? (  <AiOutlineCheckCircle className="text-white mx-auto" size={40} />) : (Title) }</button>
+       <button onClick={habdleRegister} className={`w-[200px] max-md:w-[150px] border-green-700 border-2  rounded-xl h-[60px]  block  mt-8 transition duration-200 hover:scale-95 font-semibold  ${Res?.error == 'file_added' ? ('bg-green-800') : ('bg-green-500 text-white') }`} > {Res?.error == 'file_added' ? (  <AiOutlineCheckCircle className="text-white mx-auto" size={40} />) : (Title) }</button>
     </>
   )
 }

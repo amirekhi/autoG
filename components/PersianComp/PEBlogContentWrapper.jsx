@@ -1,84 +1,68 @@
-"use client"
+"use client";
 
-import { useGettingBlogs } from '@/hook/hooks';
-import Link from 'next/link';
-import React from 'react';
-import Image from 'next/image';
-import SpinningLoading from '../SpinningLoading';
-
+import { useGettingBlogs } from "@/hook/hooks";
+import Link from "next/link";
+import React from "react";
+import Image from "next/image";
+import SpinningLoading from "../SpinningLoading";
 
 const PEBlogContentWrapper = () => {
+  const [data, loading] = useGettingBlogs();
 
-      const [ data , loading ] = useGettingBlogs()
-    
-        
-     
-    
-      const gridHeight = `${Math.ceil(data.length / 3) * 600}px`;
+  if (loading)
+    return (
+      <div className="w-full h-[500px] flex justify-center items-center text-4xl font-bold">
+        <SpinningLoading size={16} />
+      </div>
+    );
+
   return (
-    <section className="w-full  ">
-    {loading == true ? (<div className='w-full h-[500px] col-span-3  text-4xl flex justify-center items-center font-bold'><SpinningLoading size={16}/></div>) 
-    : ( <>
-    <div className='flex justify-center items-center h-[100px] w-full'>
-     <h2 className='text-5xl font-semibold text-shadow-3d-subtle  max-md:text-2xl text-center p-8' > اخبار به روز خودرو ها </h2>
-    </div>
-    
-    <div className={`grid grid-cols-6 gap-[1px]  `}  style={{ height: gridHeight }} >
-      {data.map((item, index) => {
-        // Determine group and position within the group
-        const groupIndex = Math.floor(index / 3); // Group index (0 for first 3, 1 for next 3, etc.)
-        const positionInGroup = index % 3; // Position in the group (0, 1, or 2)
+    <section className="w-full ">
+      <div
+        className={`grid grid-cols-6 gap-[1px] auto-rows-[300px] max-md:grid-cols-2 max-md:auto-rows-[220px]`}
+      >
+        {data.map((item, index) => {
+          // layout pattern: big-small-small, small-small-big
+          const pattern = index % 6;
+          let gridClasses = "col-span-2";
 
-        // Determine layout styles
-        let gridClasses;
-        if (groupIndex % 3 === 0) {
-          // Normal layout
-          if (positionInGroup === 0) {
-            gridClasses = 'col-span-4 row-span-2 max-md:col-span-6'; // Large item
-          } else {
-            gridClasses = 'col-span-2 row-span-1  max-md:col-span-3'; // Smaller items
-          }
-        } else if (groupIndex % 3 === 2) {
-          // Reversed layout
-          if (positionInGroup === 0) {
-            gridClasses = 'col-span-2 row-span-1 max-md:col-span-3 '; // Smaller items first
-          } else if (positionInGroup === 1) {
-              gridClasses = 'col-span-4 row-span-2 max-md:col-span-6'; // Large item last
-          } else {
-            gridClasses = 'col-span-2 row-span-1 max-md:col-span-3'; // Smaller items first
-          }
-        }else {
-          gridClasses = 'col-span-2 row-span-1 max-md:col-span-3'; // Smaller items first
-        }
+          if (pattern === 0) gridClasses = "col-span-4 row-span-2";
+          else if (pattern === 5) gridClasses = "col-span-4 row-span-2";
 
-        return (
-          <div
-            key={index}
-            className={`${gridClasses}  group flex items-start justify-end flex-col text-white text-lg font-bold relative  overflow-hidden  bg-black `}
-          >
-              <Image src={item.HeroImgUrl || '/bgimg.jpg'} className='w-full h-full object-cover  group-hover:opacity-30 z-20  duration-[3s] transition hover:scale-125' fill sizes='100%' alt={item.Headerdescribtion}/>
-              <h5 className=' absolute top-[50px] left-[5%] max-md:left-[2%]   max-md:text-sm'>{item.Headerdescribtion}</h5>
-              <div className='flex flex-col justify-around items-start p-8 max-md:p-4 z-50 max-md:w-[50%] '>
-              <h4 className='text-3xl font-bold mb-1 group-hover:opacity-0  duration-[3s] transition max-md:text-2xl'>{item.HeroTitle}</h4>
-              <h4 className='text-lg font-semibold mb-12 group-hover:opacity-0 duration-[3s] transition  max-md:text-sm'>{item.HeroParag}</h4>
-            
-            
-            <Link href={`/blog/${item.Url}`} >
-                <button className='w-[140px] h-[60px] border-white border-2 text-white flex justify-center items-center max-md:w-[80px] max-md:h-[40px] max-md:text-xs hover:scale-95 transition duration-200'> Show More</button>          
-            </Link>
-            
+          return (
+            <div
+              key={index}
+              className={`${gridClasses} relative overflow-hidden group flex flex-col justify-end text-white bg-black`}
+            >
+              <Image
+                src={item.HeroImgUrl || "/bgimg.jpg"}
+                alt={item.Headerdescribtion}
+                fill
+                sizes="100%"
+                className="object-cover transition-transform duration-700 group-hover:scale-110 group-hover:opacity-40"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-20"></div>
+
+              <div className="relative z-30 p-8 max-md:p-4">
+                <h3 className="text-3xl font-bold mb-2 max-md:text-xl">
+                  {item.HeroTitle}
+                </h3>
+                <p className="text-base font-medium mb-6 max-md:text-sm line-clamp-2">
+                  {item.HeroParag}
+                </p>
+                <Link href={`/blog/${item.Url}`}>
+                  <button className="border border-white text-white px-6 py-2 text-sm uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300">
+                    Read More
+                  </button>
+                </Link>
+              </div>
             </div>
-          </div>
-        );
-      })}
-    </div> 
-    
-    </>)}
-      
-   
-   
-  </section>
-  )
-}
+          );
+        })}
+      </div>
+    </section>
+  );
+};
 
-export default PEBlogContentWrapper
+export default PEBlogContentWrapper;

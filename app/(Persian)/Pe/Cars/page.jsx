@@ -187,7 +187,7 @@ return init_data
     <div className='home__filters'>
       <PESearchBar />
 
-      <div className='home__filter-container'>
+      <div className='flex justify-between items-center '>
         <CustomFilter title='fuel' options={Pefuels} />
         <CustomFilter title='year' options={PEyearsOfProduction} />
       </div>
@@ -201,10 +201,7 @@ return init_data
           ))}
         </div>
 
-        <ShowMore
-          pageNumber={(SearchParams.limit || 10) / 10}
-          isNext={(SearchParams.limit || 10) > allCars.length}
-        />
+
       </section>
     ) : (
       <div className='home__error-container'>

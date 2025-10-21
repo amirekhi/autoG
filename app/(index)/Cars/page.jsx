@@ -194,11 +194,6 @@ return init_data
             <CarCard key={index} car={car} />
           ))}
         </div>
-
-        <ShowMore
-          pageNumber={(SearchParams.limit || 10) / 10}
-          isNext={(SearchParams.limit || 10) > allCars.length}
-        />
       </section>
     ) : (
       <div className='home__error-container'>

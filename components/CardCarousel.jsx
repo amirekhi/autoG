@@ -12,6 +12,8 @@ export default function CardCarousel() {
   const cardRef = useRef(null);
   const [cardWidth, setCardWidth] = useState(0);
 
+    
+
   const isDragging = useRef(false);
   const startX = useRef(0);
   const scrollStart = useRef(0);
@@ -97,6 +99,8 @@ export default function CardCarousel() {
                   fill
                   sizes="100%"
                   className="w-full h-full object-cover absolute inset-0 rounded-2xl"
+                  placeholder="blur"
+                  blurDataURL="/CarBG.jpg"
                 />
                 <div className="relative z-50">
                   <h3 className="text-xl font-bold text-white drop-shadow z-50">{card.EN.model}</h3>

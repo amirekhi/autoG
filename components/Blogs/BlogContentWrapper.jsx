@@ -24,7 +24,7 @@ const BlogContentWrapper = () => {
   }
 
   return (
-    <section className="w-full ">
+    <section className="w-full">
       <div
         className="
           grid grid-cols-6 auto-rows-[minmax(300px,_1fr)] gap-[1px]
@@ -46,6 +46,7 @@ const BlogContentWrapper = () => {
                 hover:cursor-pointer transition-all duration-700
               `}
             >
+              {/* Background Image */}
               <Image
                 src={item.HeroImgUrl || "/bgimg.jpg"}
                 alt={item.HeroTitle || "Blog image"}
@@ -55,24 +56,36 @@ const BlogContentWrapper = () => {
                 className="
                   object-cover w-full h-full absolute top-0 left-0
                   transition-transform duration-700 ease-in-out
-                  group-hover:scale-110 group-hover:opacity-40
+                  group-hover:scale-110
                 "
               />
 
+              {/* Dark Gradient Overlay */}
               <div
                 className="
-                  relative z-10 p-8 max-md:p-4 flex flex-col gap-2
-                  backdrop-blur-[1px]
+                  absolute inset-0 bg-gradient-to-t
+                  from-black/80 via-black/40 to-transparent
+                  transition-opacity duration-700
+                  group-hover:from-black/60 group-hover:via-black/20
+                "
+              />
+
+              {/* Content */}
+              <div
+                className="
+                  relative z-10 p-8 max-md:p-4 flex flex-col gap-3
+                  translate-y-4 group-hover:translate-y-0
+                  transition-transform duration-500
                 "
               >
-                <h5 className="text-base max-md:text-sm text-gray-200">
+                <h5 className="text-sm max-md:text-xs text-gray-300 tracking-wide">
                   {item.Headerdescribtion}
                 </h5>
 
                 <h4
                   className="
-                    text-3xl max-md:text-xl font-extrabold
-                    group-hover:opacity-0 transition-opacity duration-500
+                    text-3xl max-md:text-lg font-extrabold leading-tight
+                    drop-shadow-[0_2px_3px_rgba(0,0,0,0.7)]
                   "
                 >
                   {item.HeroTitle}
@@ -80,8 +93,7 @@ const BlogContentWrapper = () => {
 
                 <p
                   className="
-                    text-lg max-md:text-sm font-medium
-                    group-hover:opacity-0 transition-opacity duration-500
+                    text-lg max-md:text-sm font-medium text-gray-200 line-clamp-2
                   "
                 >
                   {item.HeroParag}
@@ -90,9 +102,10 @@ const BlogContentWrapper = () => {
                 <Link href={`/blog/${item.Url}`} className="mt-6">
                   <button
                     className="
-                      px-6 py-3 border-2 border-white text-white
+                      px-5 py-2.5 bg-white/10 border border-white/40
+                      text-white rounded-lg backdrop-blur-sm
                       hover:bg-white hover:text-black
-                      transition-all duration-300 rounded-xl
+                      transition-all duration-300
                       max-md:px-3 max-md:py-2 max-md:text-xs
                     "
                   >
